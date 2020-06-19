@@ -1,0 +1,73 @@
+{
+  "bruh": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:bruh"
+    ],
+    "stream": "false"
+  },
+  "oof": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:oof"
+    ],
+    "stream": "false"
+  },
+  "quack": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:quack"
+    ],
+    "stream": "false"
+  },
+  "Blop": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:Blop"
+    ],
+    "stream": "false"
+  },
+  "Coin": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:Coin"
+    ],
+    "stream": "false"
+  },
+  "PING": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:PING"
+    ],
+    "stream": "false"
+  },
+  "Pling": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:Pling"
+    ],
+    "stream": "false"
+  },
+  "Pop": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:Pop"
+    ],
+    "stream": "false"
+  },
+  "surprised": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:Suprised"
+    ],
+    "stream": "false"
+  },
+
+  "uwu": {
+    "category": "player",
+    "sounds": [
+      "pingmodutils:uwu"
+    ],
+    "stream": "false"
+  }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "chatping",
+  "name": "ChatPing",
+  "description": "Plays a sound and highlights the text in chat",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Pinkulu"],
+  "credits": "Pinkulu for making the mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
