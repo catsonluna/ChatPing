@@ -36,7 +36,13 @@ public class pingPlayer {
         final String plName = Minecraft.getMinecraft().thePlayer.getName().toLowerCase();
         for (int i = 0; i < msgWithName.length(); ++i) {
             final Character colon = msgWithName.charAt(i);
-            if (colon.equals(':')) {
+            if (msgWithName.contains("party leader")){
+                return;
+            }
+            if (msgWithName.contains("party members")){
+                return;
+            }
+            else if (colon.equals(':')) {
                 final String noMessage = msgWithName.substring(0, i);
                 final String message = msgWithName.replace(noMessage, "").toLowerCase();
                 final String bigreplace = Util.replacer(Util.replacef(Util.replace7(Util.replacee(Util.replaceemoji1(Util.replaceemoji2(Util.replaceemoji3(Util.replaceemoji4(Util.replaceemoji5(Util.replaceemoji6(Util.replaceemoji7(Util.replaceemoji8(Util.replaceemoji9(Util.replaceemoji10(Util.replaceemoji11(Util.replaceemoji12(Util.replaceemoji13(Util.replaceemoji14(Util.replaceemoji15(Util.replaceemoji16(Util.replaceemoji17(Util.replaceemoji18(Util.replaceemoji19(Util.replaceemoji20(Util.replaceemoji21(message)))))))))))))))))))))))));

@@ -6,7 +6,7 @@ public class Util {
     public static String replacee(String text){return text.replaceAll("§e", "");}
     public static String replace7(String text){return text.replaceAll("§7", "");}
     public static String replacef(String text){return text.replaceAll("§f", "");}
-    public static String replacething(String text){return text.replaceAll(": ", ":" );}
+    public static String replacething(String text){return text.replaceAll(": ", ":" + pingPlayer.Cformat );}
     public static String replaceformat(String text){return text.replaceAll("&", "§");}
     public static String replaceemoji1(String text){return text.replaceAll("❤", "❤" + replaceformat(pingPlayer.Cformat));}
     public static String replaceemoji2(String text){return text.replaceAll("✮", "✮" + replaceformat(pingPlayer.Cformat));}
@@ -27,7 +27,7 @@ public class Util {
     public static String replaceemoji17(String text){return text.replaceAll("'-'⊃━☆ﾟ.*･｡ﾟ", "('-')⊃━☆ﾟ.*･｡ﾟ" + replaceformat(pingPlayer.Cformat));}
     public static String replaceemoji18(String text){return text.replaceAll("⚔", "⚔" + replaceformat(pingPlayer.Cformat));}
     public static String replaceemoji19(String text){return text.replaceAll("✌", "✌" + replaceformat(pingPlayer.Cformat));}
-    public static String replaceemoji20(String text){return text.replaceAll("OOF", "OOF" + replaceformat(pingPlayer.Cformat));}
+    public static String replaceemoji20(String text){return text.replaceAll("oof", "OOF" + replaceformat(pingPlayer.Cformat));}
     public static String replaceemoji21(String text){return text.replaceAll("puffer", "puffer" + replaceformat(pingPlayer.Cformat));}
 
 }
