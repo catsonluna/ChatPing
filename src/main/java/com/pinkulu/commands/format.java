@@ -26,7 +26,7 @@ public class format extends CommandBase {
         if (args[0].length() == 0) {
             Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace("&b[&dChatPing&b]&cPlease specify your format, or type \"off\" to disable")));
         } else if (args[0].toLowerCase().equals("off")) {
-            pingPlayer.Cformat = null;
+            pingPlayer.Cformat = "";
             chatPing.saveConfig();
             Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace("&b[&dChatPing&b]&cMessage format dissabled")));
         }

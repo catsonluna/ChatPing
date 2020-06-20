@@ -5,9 +5,6 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import scala.collection.parallel.ParIterableLike;
-
-import java.util.Arrays;
 
 public class pingPlayer {
     public static boolean bruhOn;
@@ -36,12 +33,12 @@ public class pingPlayer {
     @SubscribeEvent
     public void chatEvent(final ClientChatReceivedEvent e) {
         final String msgWithName = e.message.getFormattedText();
-        final String plName = Minecraft.getMinecraft().thePlayer.getName();
+        final String plName = Minecraft.getMinecraft().thePlayer.getName().toLowerCase();
         for (int i = 0; i < msgWithName.length(); ++i) {
             final Character colon = msgWithName.charAt(i);
             if (colon.equals(':')) {
                 final String noMessage = msgWithName.substring(0, i);
-                final String message = msgWithName.replace(noMessage, "");
+                final String message = msgWithName.replace(noMessage, "").toLowerCase();
                 final String bigreplace = Util.replacer(Util.replacef(Util.replace7(Util.replacee(Util.replaceemoji1(Util.replaceemoji2(Util.replaceemoji3(Util.replaceemoji4(Util.replaceemoji5(Util.replaceemoji6(Util.replaceemoji7(Util.replaceemoji8(Util.replaceemoji9(Util.replaceemoji10(Util.replaceemoji11(Util.replaceemoji12(Util.replaceemoji13(Util.replaceemoji14(Util.replaceemoji15(Util.replaceemoji16(Util.replaceemoji17(Util.replaceemoji18(Util.replaceemoji19(Util.replaceemoji20(Util.replaceemoji21(message)))))))))))))))))))))))));
                 final String smallreplace = Util.replacething(bigreplace);
                 if (message.contains(plName)) {
@@ -101,6 +98,7 @@ public class pingPlayer {
                         }
                     }
                 }
+            break;
             }
         }
     }
