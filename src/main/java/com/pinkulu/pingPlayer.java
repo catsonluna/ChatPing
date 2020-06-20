@@ -36,10 +36,10 @@ public class pingPlayer {
         final String plName = Minecraft.getMinecraft().thePlayer.getName().toLowerCase();
         for (int i = 0; i < msgWithName.length(); ++i) {
             final Character colon = msgWithName.charAt(i);
-            if (msgWithName.contains("party leader")){
+            if (msgWithName.contains("Party Leader")){
                 return;
             }
-            if (msgWithName.contains("party members")){
+            if (msgWithName.contains("Party Members")){
                 return;
             }
             else if (colon.equals(':')) {
