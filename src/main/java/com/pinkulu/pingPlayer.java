@@ -5,14 +5,15 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class pingPlayer {
     public static boolean bruhOn;
     public static boolean oofOn;
     public static boolean quackOn;
     public static boolean blopOn;
-    public static boolean coinOn ;
-    public static boolean pingOn ;
+    public static boolean coinOn;
+    public static boolean pingOn;
     public static boolean plingOn;
     public static boolean popOn;
     public static boolean suprisedOn;
@@ -36,20 +37,20 @@ public class pingPlayer {
         final String plName = Minecraft.getMinecraft().thePlayer.getName().toLowerCase();
         for (int i = 0; i < msgWithName.length(); ++i) {
             final Character colon = msgWithName.charAt(i);
-            if (msgWithName.contains("Party Leader")){
+            if (msgWithName.contains("Party Leader")) {
                 return;
             }
-            if (msgWithName.contains("Party Members")){
+            if (msgWithName.contains("Party Members")) {
                 return;
-            }
-            else if (colon.equals(':')) {
+            } else if (colon.equals(':')) {
                 final String noMessage = msgWithName.substring(0, i);
                 final String message = msgWithName.replace(noMessage, "").toLowerCase();
-                final String bigreplace = Util.replacer(Util.replacef(Util.replace7(Util.replacee(Util.replaceemoji1(Util.replaceemoji2(Util.replaceemoji3(Util.replaceemoji4(Util.replaceemoji5(Util.replaceemoji6(Util.replaceemoji7(Util.replaceemoji8(Util.replaceemoji9(Util.replaceemoji10(Util.replaceemoji11(Util.replaceemoji12(Util.replaceemoji13(Util.replaceemoji14(Util.replaceemoji15(Util.replaceemoji16(Util.replaceemoji17(Util.replaceemoji18(Util.replaceemoji19(Util.replaceemoji20(Util.replaceemoji21(message)))))))))))))))))))))))));
+                final String normal = msgWithName.replace(noMessage, "");
+                final String bigreplace = Util.replacer(Util.replacef(Util.replace7(Util.replacee(Util.replaceemoji1(Util.replaceemoji2(Util.replaceemoji3(Util.replaceemoji4(Util.replaceemoji5(Util.replaceemoji6(Util.replaceemoji7(Util.replaceemoji8(Util.replaceemoji9(Util.replaceemoji10(Util.replaceemoji11(Util.replaceemoji12(Util.replaceemoji13(Util.replaceemoji14(Util.replaceemoji15(Util.replaceemoji16(Util.replaceemoji17(Util.replaceemoji18(Util.replaceemoji19(Util.replaceemoji20(Util.replaceemoji21(normal)))))))))))))))))))))))));
                 final String smallreplace = Util.replacething(bigreplace);
                 if (message.contains(plName)) {
                     if (Cformat != null) {
-                        Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace(noMessage + Cformat + smallreplace)));
+                        Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(noMessage + Cformat + smallreplace));
                         e.setCanceled(true);
                     }
                     if (bruhOn) {
@@ -70,15 +71,13 @@ public class pingPlayer {
                         Minecraft.getMinecraft().thePlayer.playSound(pop.toString(), 1.0f, 1.0f);
                     } else if (suprisedOn) {
                         Minecraft.getMinecraft().thePlayer.playSound(surprised.toString(), 1.0f, 1.0f);
-                    }
-                    else if (uwuOn) {
+                    } else if (uwuOn) {
                         Minecraft.getMinecraft().thePlayer.playSound(uwu.toString(), 1.0f, 1.0f);
                     }
-                }
-                else if (Nick != null) {
+                } else if (Nick != null) {
                     if (message.contains(Nick)) {
                         if (Cformat != null) {
-                            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace(noMessage + Cformat + smallreplace)));
+                            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(noMessage + Util.replaceformat(Cformat) + smallreplace));
                             e.setCanceled(true);
                         }
                         if (bruhOn) {
@@ -104,8 +103,10 @@ public class pingPlayer {
                         }
                     }
                 }
-            break;
+                break;
             }
         }
     }
+
+
 }

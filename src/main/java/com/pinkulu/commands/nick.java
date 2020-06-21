@@ -22,16 +22,16 @@ public class nick extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender iCommandSender, String[] args) throws CommandException {
-        if (args[0].toLowerCase().length() == 0){
-            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace("&b[&dChatPing&b]&cPlease specify your nick, or type \"off\" to disable")));
+        if (args.length == 0){
+            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("§b[§dChatPing§b]§cPlease specify your nick, or type \"off\" to disable"));
         }
         else if(args[0].toLowerCase().equals("off")){
             pingPlayer.Nick = null;
-            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace("&b[&dChatPing&b]&cYou have disabled your nick")));
+            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("§b[§dChatPing§b]§cYou have disabled your nick"));
             chatPing.saveConfig();
         }else{
-            pingPlayer.Nick = args[0];
-            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(Util.replace("&b[&dChatPing&b]&aYou have set your nick to &e" + args[0])));
+            pingPlayer.Nick = args[0].toLowerCase();
+            Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("§b[§dChatPing§b]§aYou have set your nick to §e" + args[0]));
             chatPing.saveConfig();
         }
     }

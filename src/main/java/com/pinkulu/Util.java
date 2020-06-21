@@ -1,12 +1,11 @@
 package com.pinkulu;
 
 public class Util {
-    public static String replace(String text){return text.replaceAll("&", "§");}
     public static String replacer(String text){return text.replaceAll("§r", "");}
     public static String replacee(String text){return text.replaceAll("§e", "");}
     public static String replace7(String text){return text.replaceAll("§7", "");}
     public static String replacef(String text){return text.replaceAll("§f", "");}
-    public static String replacething(String text){return text.replaceAll(": ", ":" + pingPlayer.Cformat );}
+    public static String replacething(String text){return text.replaceFirst(": ", "§f:" + pingPlayer.Cformat );}
     public static String replaceformat(String text){return text.replaceAll("&", "§");}
     public static String replaceemoji1(String text){return text.replaceAll("❤", "❤" + replaceformat(pingPlayer.Cformat));}
     public static String replaceemoji2(String text){return text.replaceAll("✮", "✮" + replaceformat(pingPlayer.Cformat));}
