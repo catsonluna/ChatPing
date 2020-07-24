@@ -6,6 +6,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class pingPlayer {
     public static boolean bruhOn;
@@ -18,8 +19,7 @@ public class pingPlayer {
     public static boolean popOn;
     public static boolean suprisedOn;
     public static boolean uwuOn;
-    public static boolean rainbow;
-    public static String Cformat = "";
+    public static String Cformat = "off";
     public static String Nick;
     public static ResourceLocation bruh = new ResourceLocation("pingmodutils", "bruh");
     public static ResourceLocation oof = new ResourceLocation("pingmodutils", "oof");
@@ -31,8 +31,9 @@ public class pingPlayer {
     public static ResourceLocation pop = new ResourceLocation("pingmodutils", "Pop");
     public static ResourceLocation surprised = new ResourceLocation("pingmodutils", "surprised");
     public static ResourceLocation uwu = new ResourceLocation("pingmodutils", "uwu");
+
     @SubscribeEvent
-    public void chatEvent(final ClientChatReceivedEvent e) {
+    public void chatEvent(ClientChatReceivedEvent e) {
 
         final String msgWithName = e.message.getFormattedText();
         final String plName = Minecraft.getMinecraft().thePlayer.getName().toLowerCase();
@@ -41,9 +42,12 @@ public class pingPlayer {
             if (msgWithName.contains("Party Leader")) {
                 return;
             }
-            if (msgWithName.contains("Party Members")) {
+            else if (msgWithName.contains("Party Members")) {
                 return;
-            } else if (colon.equals(':')) {
+            }
+            else if (msgWithName.contains("Party Moderator")) {
+                return;
+            }else if (colon.equals(':')) {
 
                 final String noMessage = msgWithName.substring(0, i);
                 final String message = msgWithName.replace(noMessage, "").toLowerCase();
@@ -51,7 +55,7 @@ public class pingPlayer {
                 final String bigreplace = Util.replacer(Util.replacef(Util.replace7(Util.replacee(Util.replaceemoji1(Util.replaceemoji2(Util.replaceemoji3(Util.replaceemoji4(Util.replaceemoji5(Util.replaceemoji6(Util.replaceemoji7(Util.replaceemoji8(Util.replaceemoji9(Util.replaceemoji10(Util.replaceemoji11(Util.replaceemoji12(Util.replaceemoji13(Util.replaceemoji14(Util.replaceemoji15(Util.replaceemoji16(Util.replaceemoji17(Util.replaceemoji18(Util.replaceemoji19(Util.replaceemoji20(Util.replaceemoji21(normal)))))))))))))))))))))))));
                 final String smallreplace = Util.replacething(bigreplace);
                 if (message.contains(plName) || message.contains(Nick)) {
-                    if (Cformat != null) {
+                    if (!Cformat.equals("off")) {
                         Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(noMessage + Cformat + smallreplace));
                         e.setCanceled(true);
                     }
@@ -76,9 +80,8 @@ public class pingPlayer {
                     } else if (uwuOn) {
                         Minecraft.getMinecraft().thePlayer.playSound(uwu.toString(), 1.0f, 1.0f);
                     }
-
+                    break;
                 }
-                break;
             }
         }
     }

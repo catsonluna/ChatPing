@@ -21,7 +21,7 @@ import java.io.IOException;
 public class chatPing {
 
     static final String MODID = "chatping";
-    public static final String VERSION = "1.3";
+    public static final String VERSION = "1.5";
     public static final String NAME = "ChatPing";
     private final pingPlayer pingPlayer = new pingPlayer();
 

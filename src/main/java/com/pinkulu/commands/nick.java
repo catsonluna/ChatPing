@@ -26,7 +26,7 @@ public class nick extends CommandBase {
             Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("§b[§dChatPing§b]§cPlease specify your nick, or type \"off\" to disable"));
         }
         else if(args[0].toLowerCase().equals("off")){
-            pingPlayer.Nick = null;
+            pingPlayer.Nick = "off";
             Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText("§b[§dChatPing§b]§cYou have disabled your nick"));
             chatPing.saveConfig();
         }else{
